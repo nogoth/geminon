@@ -1,0 +1,15 @@
+The Documentation Trade-off: Precision vs. Discoverability
+
+In expanding our LinkedIn content generation system, we encountered a common architectural challenge: as the complexity of the feature set grows (in this case, adding specialized technical personas), the "onboarding" cost for the user increases. A feature that isn't documented is, for all practical purposes, a feature that doesn't exist.
+
+We have addressed this by integrating a explicit --voice parameter and providing a structured "Usage Examples" framework within the core skill documentation.
+
+Key System Enhancements:
+
+* Expanded Persona Library: Integrated specialized voices for the Architect, SRE, Product Engineer, and others to ensure technical nuance is preserved across different engineering domains.
+* Explicit CLI Support: Standardized the --voice parameter to allow for deterministic style selection at runtime, moving away from implicit voice detection.
+* Documentation as Code: Updated the skill definitions to include concrete usage examples, reducing the cognitive load for developers invoking the tool.
+
+The trade-off here was between a purely "magic" system that tries to guess the voice and a "structured" system that requires an explicit parameter. We chose the latter to ensure reliability and user control, while mitigating the friction through better discoverability.
+
+The result is a more predictable, scalable workflow for generating professional technical updates that maintain high signal while adapting to the specific perspective of the author.

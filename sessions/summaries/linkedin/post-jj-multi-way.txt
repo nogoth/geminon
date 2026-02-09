@@ -1,0 +1,17 @@
+Jujutsu (jj) and the Evolution of Conflict Management in Version Control
+
+Version control systems are fundamentally about managing divergence. While Git has popularized the three-way merge, it often treats conflicts as transient, disruptive states that halt the developer's workflow. Jujutsu (jj) represents a significant shift in this paradigm by treating conflicts as first-class, committable data structures.
+
+My recent investigation into Jujutsu's conflict engine reveals two critical insights for teams evaluating modern VCS alternatives:
+
+1. Native Multi-Way Conflict Support
+Unlike Git, which typically forces developers to resolve merges in pairs, Jujutsu natively supports N-sided conflicts. Whether you are merging three, four, or more divergent branches simultaneously, Jujutsu captures the entire state in a single commit. The conflict markers utilize an algebraic representation, showing the precise diff from a common base for every divergent side. This allows for a holistic view of divergence that is often lost in sequential merges.
+
+2. Strategic External Tool Integration
+Jujutsu integrates with external merge tools through a robust configuration layer. By defining specific arguments for base, left, right, and output files, developers can continue using specialized tools like KDiff3 or Meld. However, a key discovery in this research is that the 'jj resolve' command is currently optimized for three-way merges. When a conflict exceeds two sides, the system shifts to manual resolution, requiring developers to leverage the descriptive conflict markers directly within their editor.
+
+The implications for high-velocity engineering teams are clear: by treating conflicts as stable state rather than "stop-the-world" events, Jujutsu enables more flexible workflows. Developers can commit conflicted work, share it for collaborative resolution, or even rebase conflicted branches without losing the history of the divergence itself.
+
+As we move toward more complex distributed development models, the ability to manage multi-way divergence as first-class data will likely become a baseline requirement for version control.
+
+#SoftwareEngineering #VersionControl #Jujutsu #VCS #Git #DeveloperTools

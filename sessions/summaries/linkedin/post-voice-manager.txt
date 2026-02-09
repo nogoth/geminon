@@ -1,0 +1,12 @@
+Automated voice registration for the linkedin-writer skill.
+
+Decoupled voice definitions into voice_styles.md for better extensibility. Shipped register_voice.py to handle both interactive CLI flows and quick attribute derivation.
+
+Technical milestones:
+- Centralized style repository in Markdown.
+- Registration script supporting --quick-prompt and interactive modes.
+- Verified 'Hacker' profile for high-density technical updates.
+
+Key insight: Standardizing authorial "voices" allows for context-aware professional updates without sacrificing technical depth or forcing a one-size-fits-all tone.
+
+Next: Integrating these styles directly into the session-summarizer pipeline.

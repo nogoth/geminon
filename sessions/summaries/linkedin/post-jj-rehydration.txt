@@ -1,0 +1,14 @@
+Headline: Version Control shouldn't stop because of a conflict.
+
+Most of us treat merge conflicts in Git like a red light—everything stops until it’s fixed. You can’t commit, you can’t switch branches easily, and your flow is broken.
+
+I’ve been diving deep into Jujutsu (jj), a Git-compatible VCS that treats conflicts as first-class citizens. Here’s what that actually means for your workflow:
+
+✅ Conflicts are Data, not Blockers: In jj, a conflict is just a state of a commit. You can commit a conflicted file, push it, or even rebase it. You resolve it when you are ready, not when the tool forces you to.
+✅ Algebraic Conflict Model: It doesn't just look at text; it models conflicts as A + B + C - 2*Base. This allows for native N-way merges that Git struggles to represent.
+✅ The "Working Copy" Commit: There is no git add. Your workspace is always a commit (@). When you're done, you just move to a new child commit. It’s a cleaner mental model that eliminates the "staging area" overhead.
+✅ The Ultimate Undo: Every single operation is tracked in an op log. If a complex rebase goes sideways, jj undo doesn't just reset your HEAD—it restores the entire repository state perfectly.
+
+If you’re tired of the "Stop-the-World" nature of traditional VCS, jj is a breath of fresh air. It’s fully compatible with your existing Git repos, so you can start using it today as a powerful new frontend.
+
+#VCS #Jujutsu #Git #SoftwareEngineering #DevOps #DeveloperExperience
