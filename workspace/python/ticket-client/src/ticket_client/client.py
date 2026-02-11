@@ -17,9 +17,9 @@ class TicketClient:
 
     def list_tickets(self, exclude_area: Optional[str] = None, exclude_status: Optional[str] = None) -> List[Ticket]:
         params = {}
-        if exclude_area:
+        if exclude_area is not None:
             params["exclude_area"] = exclude_area
-        if exclude_status:
+        if exclude_status is not None:
             params["exclude_status"] = exclude_status
 
         with httpx.Client() as client:
