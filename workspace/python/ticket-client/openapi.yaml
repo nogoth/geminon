@@ -1,0 +1,116 @@
+openapi: 3.0.0
+info:
+  title: Ticket Tracker API
+  version: 1.0.0
+paths:
+  /tickets:
+    get:
+      summary: List tickets
+      parameters:
+        - in: query
+          name: exclude_area
+          schema:
+            type: string
+          description: Filter out tickets with this area of concern
+        - in: query
+          name: exclude_status
+          schema:
+            type: string
+          description: Filter out tickets with this status
+      responses:
+        '200':
+          description: A list of tickets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ticket'
+    post:
+      summary: Create a ticket
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TicketInput'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
+  /tickets/{id}:
+    get:
+      summary: Get a ticket by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A ticket
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
+        '404':
+          description: Ticket not found
+    put:
+      summary: Update a ticket by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TicketInput'
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
+        '404':
+          description: Ticket not found
+
+components:
+  schemas:
+    TicketInput:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+          default: "Open"
+        area_of_concern:
+          type: string
+        agent_name:
+          type: string
+        resolution_message:
+          type: string
+    Ticket:
+      allOf:
+        - $ref: '#/components/schemas/TicketInput'
+        - type: object
+          properties:
+            id:
+              type: integer
+            created_at:
+              type: string
+              format: date-time
+            updated_at:
+              type: string
+              format: date-time
