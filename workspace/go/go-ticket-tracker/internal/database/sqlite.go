@@ -3,10 +3,9 @@ package database
 import (
 	"database/sql"
 	"fmt"
-	"strings"
 	"time"
 
-	_ "github.com/mattn/go-sqlite3"
+	_ "modernc.org/sqlite"
 )
 
 type Ticket struct {
@@ -25,7 +24,7 @@ var DB *sql.DB
 
 func InitDB(filepath string) error {
 	var err error
-	DB, err = sql.Open("sqlite3", filepath)
+	DB, err = sql.Open("sqlite", filepath)
 	if err != nil {
 		return err
 	}
