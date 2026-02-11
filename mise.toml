@@ -1,5 +1,7 @@
 [tools]
 bun = "latest"
 glab = "latest"
+go = "latest"
 jj = "latest"
 jq = "latest"
+uv = "latest"
