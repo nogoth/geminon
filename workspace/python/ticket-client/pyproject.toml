@@ -1,0 +1,17 @@
+[project]
+name = "ticket-client"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+    "pydantic>=2.12.5",
+    "rich>=14.3.2",
+    "typer>=0.23.0",
+]
+
+[dependency-groups]
+dev = [
+    "datamodel-code-generator>=0.53.0",
+]
