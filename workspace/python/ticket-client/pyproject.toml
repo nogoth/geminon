@@ -13,6 +13,10 @@ dependencies = [
 
 [project.scripts]
 ticket-client = "ticket_client.main:app"
+test = "pytest"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
 
 [dependency-groups]
 dev = [

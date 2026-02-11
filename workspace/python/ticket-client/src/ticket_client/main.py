@@ -64,20 +64,13 @@ def get(ticket_id: int):
     """Get details of a specific ticket."""
     try:
         t = client.get_ticket(ticket_id)
-        content = f"[bold]Title:[/] {t.title}
-"
-        content += f"[bold]Status:[/] {t.status}
-"
-        content += f"[bold]Area:[/] {t.area_of_concern}
-"
-        content += f"[bold]Agent:[/] {t.agent_name}
-"
-        content += f"[bold]Description:[/] {t.description}
-"
-        content += f"[bold]Resolution:[/] {t.resolution_message or 'N/A'}
-"
-        content += f"[bold]Created:[/] {t.created_at}
-"
+        content = f"[bold]Title:[/] {t.title}\n"
+        content += f"[bold]Status:[/] {t.status}\n"
+        content += f"[bold]Area:[/] {t.area_of_concern}\n"
+        content += f"[bold]Agent:[/] {t.agent_name}\n"
+        content += f"[bold]Description:[/] {t.description}\n"
+        content += f"[bold]Resolution:[/] {t.resolution_message or 'N/A'}\n"
+        content += f"[bold]Created:[/] {t.created_at}\n"
         content += f"[bold]Updated:[/] {t.updated_at}"
         
         rprint(Panel(content, title=f"Ticket #{t.id}", expand=False))
