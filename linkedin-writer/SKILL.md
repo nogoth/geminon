@@ -1,3 +1,8 @@
+---
+name: linkedin-writer
+description: Converts raw technical logs and summaries into professional LinkedIn updates using customizable authorial voices.
+---
+
 # LinkedIn Writer
 
 ## Overview
