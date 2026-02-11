@@ -11,6 +11,9 @@ dependencies = [
     "typer>=0.23.0",
 ]
 
+[project.scripts]
+ticket-client = "ticket_client.main:app"
+
 [dependency-groups]
 dev = [
     "datamodel-code-generator>=0.53.0",
