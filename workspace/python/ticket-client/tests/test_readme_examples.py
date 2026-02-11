@@ -54,6 +54,5 @@ def test_readme_commands():
         args = shlex.split(cmd)
         
         result = runner.invoke(app, args)
-        assert result.exit_code == 0, f"Command failed: ticket-client {cmd}
-Output: {result.stdout}"
+        assert result.exit_code == 0, f"Command failed: ticket-client {cmd}\nOutput: {result.stdout}"
         print(f"Verified command: ticket-client {cmd}")
