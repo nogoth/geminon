@@ -17,4 +17,7 @@ ticket-client = "ticket_client.main:app"
 [dependency-groups]
 dev = [
     "datamodel-code-generator>=0.53.0",
+    "pytest>=9.0.2",
+    "pytest-mock>=3.15.1",
+    "respx>=0.22.0",
 ]
