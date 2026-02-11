@@ -1,4 +1,5 @@
 [tools]
+bun = "latest"
 glab = "latest"
 jj = "latest"
 jq = "latest"
