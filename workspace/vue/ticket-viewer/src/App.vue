@@ -1,30 +1,35 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import TicketGrid from './components/TicketGrid.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="container">
+    <header>
+      <h1>Ticket Tracker</h1>
+    </header>
+    
+    <main>
+      <TicketGrid />
+    </main>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.container {
+  min-height: 100vh;
+  padding: 2rem;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+header {
+  margin-bottom: 3rem;
+  text-align: center;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  background: linear-gradient(to right, #646cff, #42b883);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 </style>
