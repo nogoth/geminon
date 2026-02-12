@@ -1,5 +1,26 @@
-# Vue 3 + Vite
+# Ticket Viewer (Vue)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A responsive 3-column grid viewer for the Ticket Tracker system.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Features
+- 3xN Grid Layout (CSS Grid)
+- Floating Action Button (+) for ticket creation
+- Animated creation overlay with background dimming
+- Dark/Light mode support
+
+## Usage
+
+### 1. Start the Backend
+```bash
+cd ../../go/go-ticket-tracker
+go run cmd/server/main.go
+```
+
+### 2. Start the Frontend
+```bash
+cd workspace/vue/ticket-viewer
+npm install
+npm run dev
+```
+
+The application will typically be available at `http://localhost:5173`.
