@@ -1,9 +1,13 @@
+import os
 import httpx
 from typing import List, Optional
 from .models import Ticket, TicketInput
 
 class TicketClient:
-    def __init__(self, base_url: str = "http://localhost:8080"):
+    def __init__(self, base_url: Optional[str] = None):
+        if base_url is None:
+            host = os.getenv("TICKET_SERVER_HOST", "localhost")
+            base_url = f"http://{host}:8080"
         self.base_url = base_url.rstrip("/")
 
     def create_ticket(self, ticket: TicketInput) -> Ticket:

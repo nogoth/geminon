@@ -24,7 +24,8 @@ const submitForm = async () => {
   try {
     submitting.value = true
     error.value = null
-    await axios.post('http://localhost:8080/tickets', form)
+    const host = window.location.hostname
+    await axios.post(`http://${host}:8080/tickets`, form)
     emit('created')
     emit('close')
   } catch (err) {

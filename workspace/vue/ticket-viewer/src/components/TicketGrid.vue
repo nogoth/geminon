@@ -10,7 +10,8 @@ const error = ref(null)
 const fetchTickets = async () => {
   try {
     loading.value = true
-    const response = await axios.get('http://localhost:8080/tickets')
+    const host = window.location.hostname
+    const response = await axios.get(`http://${host}:8080/tickets`)
     tickets.value = response.data
     error.value = null
   } catch (err) {

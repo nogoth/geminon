@@ -24,8 +24,9 @@ func main() {
 	// Prefix match for /tickets/ (handles IDs)
 	mux.HandleFunc("/tickets/", api.TicketHandler)
 
-	// Wrap mux with CORS middleware
+	// Wrap mux with CORS middleware and logging
 	corsMux := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		log.Printf("[API] %s %s from %s", r.Method, r.URL.Path, r.RemoteAddr)
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
