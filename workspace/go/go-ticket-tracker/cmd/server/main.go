@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"go-ticket-tracker/internal/api"
 	"go-ticket-tracker/internal/database"
 	"log"
@@ -25,6 +24,20 @@ func main() {
 	// Prefix match for /tickets/ (handles IDs)
 	mux.HandleFunc("/tickets/", api.TicketHandler)
 
+	// Wrap mux with CORS middleware
+	corsMux := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+
+		if r.Method == "OPTIONS" {
+			w.WriteHeader(http.StatusOK)
+			return
+		}
+
+		mux.ServeHTTP(w, r)
+	})
+
 	// Port configuration
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -33,7 +46,7 @@ func main() {
 	addr := ":" + port
 
 	log.Printf("Server starting on port %s", port)
-	if err := http.ListenAndServe(addr, mux); err != nil {
+	if err := http.ListenAndServe(addr, corsMux); err != nil {
 		log.Fatalf("Server failed to start: %v", err)
 	}
 }
