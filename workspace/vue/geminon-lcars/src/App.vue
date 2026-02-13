@@ -110,4 +110,20 @@ a:hover {
   font-size: 2.5rem;
   color: white;
 }
+
+@media (max-width: 768px) {
+  .value {
+    font-size: 2rem;
+  }
+  .stat, .stardate-container {
+    font-size: 1.2rem;
+  }
+  li {
+    margin-bottom: 15px;
+  }
+  a {
+    display: block;
+    padding: 10px 0;
+  }
+}
 </style>
