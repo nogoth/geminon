@@ -1,6 +1,6 @@
 # Gemini CLI Project Overview
 
-This here repository holds the essentials for the Gemini CLI, helping folks get their work done efficiently. It's built on a few core capabilities, each designed to make things run a bit smoother.
+This repository is for use in the Gemini CLI, helping me(and maybe others) get their work done. 
 
 ## Core Skills
 
@@ -13,10 +13,30 @@ This skill helps tuck away findings from your research. Think of it as keeping g
 When you need to recall past lessons, this skill helps bring those research memories back into play. It's about remembering what we've already figured out, so you don't have to start fresh every time. Finds these memories in the `memories/` directory.
 
 ### LinkedIn Writer
-For when you've done something worth sharing. This skill takes your technical summaries and whips them into shape for LinkedIn, making sure they sound professional. It's got different "voices" too, so it sounds like you, but for the internet. Posts are saved in `sessions/summaries/linkedin/`.
+For when you've done something worth sharing. This skill takes your technical summaries and whips them into shape for LinkedIn, making sure they sound professional. It's got different "voices" too, so it can be as terse or verbose as you want. Posts are saved in `sessions/summaries/linkedin/`.
 
 ### Session Summarizer
 At the end of a long stretch of work, this skill helps sum things up. It lays out what got done, what tripped us up, and anything new that came along. Good for looking back and seeing where we stand. Summaries are kept in the `sessions/summaries/` directory.
+
+## Workspaces
+
+We've expanded into building other software in the `workspace/` directory. for example:
+
+### Go
+*   **Ticket Tracker** (`workspace/go/go-ticket-tracker`): A robust backend API for tracking tickets. It's built with Go, uses SQLite for storage, and provides an OpenAPI specification.
+
+### Python
+*   **Ticket Client** (`workspace/python/ticket-client`): A Python SDK designed to talk to the Ticket Tracker API. It handles the heavy lifting of communicating with the backend.
+
+### Vue
+*   **Ticket Viewer** (`workspace/vue/ticket-viewer`): A clean Vue.js frontend for viewing and managing tickets. (WIP)
+*   **Geminon LCARS** (`workspace/vue/geminon-lcars`): A futuristic dashboard styled after the LCARS interface (from Star Trek), demonstrating our UI capabilities.
+
+## Extensions
+
+Gemini-cli validated extensions, these are for making my life more fun, or yours:
+
+*   **Shades of Pink** (`extensions/shades-of-pink-theme-extension`): A theme extension that brings a splash of color to the environment.
 
 ## Directories of Note
 
@@ -25,3 +45,9 @@ This is where all the good research findings get stored. Each file is a structur
 
 ### `sessions/summaries/`
 After a work session, a summary of what happened here gets filed away. It's a record of the day's progress, challenges, and what's next. The `linkedin/` subdirectory holds the professional posts drafted from these summaries.
+
+### `workspace/`
+The home for our active coding projects. Whether it's Go, Python, or Vue, this is where the code lives.
+
+### `extensions/`
+A place for add-ons and themes that enhance the Gemini CLI experience.
