@@ -13,14 +13,19 @@ body {
   text-transform: uppercase;
   margin: 0;
   padding: 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .lcars-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: var(--lcars-gap);
-  height: calc(100vh - 80px);
+}
+
+@media (max-width: 768px) {
+  .lcars-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .lcars-panel {
