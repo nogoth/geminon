@@ -26,6 +26,16 @@ body {
   .lcars-container {
     grid-template-columns: 1fr;
   }
+  .lcars-elbow::after {
+    width: 15px;
+  }
+  .lcars-content {
+    border-left-width: 15px;
+    padding: 15px;
+  }
+  body {
+    padding: 20px;
+  }
 }
 
 .lcars-panel {
