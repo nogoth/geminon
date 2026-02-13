@@ -1,26 +1,23 @@
 :root {
-  --spaceman-purple: #cc99cc;
-  --spaceman-blue: #99ccff;
-  --spaceman-orange: #ff9900;
-  --spaceman-bg: #0b0b0d;
-  
-  /* Metallic Palette */
-  --spaceman-silver: #a8a8a8;
-  --spaceman-gold: #d4af37;
-  --spaceman-copper: #9c5221;
+  --spaceman-primary: #4B5320;   /* Forest Moss */
+  --spaceman-surface: #C2B280;   /* Sand */
+  --spaceman-action: #B7410E;    /* Rust */
+  --spaceman-variation: #ACE1AF; /* Pale Celadon */
+  --spaceman-dark: #1A1C0B;      /* Dark Moss */
+  --spaceman-bg: var(--spaceman-primary);
 }
 
 body {
   background-color: var(--spaceman-bg);
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-  color: #fff;
+    linear-gradient(rgba(172, 225, 175, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(172, 225, 175, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: var(--spaceman-surface);
   font-family: 'Courier New', Courier, monospace;
   text-transform: uppercase;
   margin: 0;
-  overflow: hidden; /* Fixed console feel */
+  overflow: hidden;
 }
 
 .spaceman-interface {
@@ -36,30 +33,32 @@ body {
 .side-launcher {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 65px;
+  gap: 15px;
+  width: 70px;
   padding: 0 10px;
   box-sizing: border-box;
+  background: rgba(26, 28, 11, 0.3);
+  border: 1px solid var(--spaceman-variation);
 }
 
 .side-launcher.left {
-  border-right: 2px solid #333;
+  border-radius: 0 15px 15px 0;
 }
 
 .side-launcher.right {
-  border-left: 2px solid #333;
-  flex-direction: column-reverse; /* Bottom-to-top flow */
+  border-radius: 15px 0 0 15px;
+  flex-direction: column-reverse;
 }
 
 .nav-btn {
-  width: 45px;
-  height: 45px;
-  border: none;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(0,0,0,0.2);
   cursor: pointer;
   position: relative;
-  transition: all 0.2s;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 4px;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.8);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
 }
 
 .nav-btn::after {
@@ -68,39 +67,32 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
-  height: 2px;
-  background: rgba(0,0,0,0.3);
+  width: 40%;
+  height: 40%;
+  background: rgba(0,0,0,0.2);
+  border-radius: 2px;
 }
 
-/* Primary Palette */
-.nav-btn.purple { background-color: var(--spaceman-purple); }
-.nav-btn.blue { background-color: var(--spaceman-blue); }
-.nav-btn.orange { background-color: var(--spaceman-orange); }
-
-/* Metallic Palette */
-.nav-btn.silver { 
-  background: linear-gradient(145deg, var(--spaceman-silver), #777);
-  border: 1px solid #999;
-}
-.nav-btn.gold { 
-  background: linear-gradient(145deg, var(--spaceman-gold), #8a6d05);
-  border: 1px solid #b8860b;
-}
-.nav-btn.copper { 
-  background: linear-gradient(145deg, var(--spaceman-copper), #5e2f13);
-  border: 1px solid #8b4513;
-}
+/* Wada Semantic Classes */
+.nav-btn.action { background-color: var(--spaceman-action); }
+.nav-btn.variation { background-color: var(--spaceman-variation); }
+.nav-btn.primary { background-color: var(--spaceman-primary); }
 
 .nav-btn:hover {
-  filter: brightness(1.2);
-  transform: scale(1.05);
+  filter: brightness(1.1);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 rgba(0,0,0,0.4);
 }
 
 .nav-btn.active {
-  box-shadow: 0 0 15px currentColor;
-  transform: scale(1.1);
-  outline: 2px solid #fff;
+  background-color: var(--spaceman-dark) !important;
+  border-color: var(--spaceman-action);
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.8);
+  transform: translate(1px, 1px);
+}
+
+.nav-btn.active::after {
+  background: var(--spaceman-surface);
 }
 
 /* Console Stage */
@@ -110,54 +102,55 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .spaceman-panel {
   width: 100%;
   max-width: 800px;
-  background: rgba(15, 15, 18, 0.95);
-  border: 2px solid #333;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  background: var(--spaceman-surface);
+  color: var(--spaceman-dark);
+  border: 4px solid var(--spaceman-dark);
+  box-shadow: 15px 15px 0 rgba(0,0,0,0.2);
   position: absolute;
 }
 
-/* Mechanical Elbows repurposed as Panel Headers */
+/* Mechanical Elbows */
 .spaceman-elbow {
-  height: 40px;
+  height: 50px;
   width: 100%;
-  border-radius: 20px 20px 0 0;
   position: relative;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+  background-color: var(--spaceman-primary);
+  border-bottom: 2px solid var(--spaceman-dark);
 }
 
 .spaceman-elbow::after {
-  content: "••• SYSTEM ENGAGED •••";
+  content: "REGISTRY: WADA-MOD-2026";
   position: absolute;
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 10px;
-  color: rgba(0,0,0,0.5);
+  font-size: 12px;
+  color: var(--spaceman-variation);
   font-weight: bold;
+  letter-spacing: 2px;
 }
 
-.spaceman-elbow.purple { background-color: var(--spaceman-purple); }
-.spaceman-elbow.blue { background-color: var(--spaceman-blue); }
-.spaceman-elbow.orange { background-color: var(--spaceman-orange); }
+.spaceman-elbow.action { background-color: var(--spaceman-action); }
+.spaceman-elbow.variation { background-color: var(--spaceman-variation); }
 
 .spaceman-content {
-  padding: 30px;
+  padding: 40px;
 }
 
 .scanning-text {
   animation: blink 1s steps(2, start) infinite;
-  color: var(--spaceman-orange);
+  color: var(--spaceman-action);
   font-weight: bold;
-  background: rgba(255, 153, 0, 0.1);
-  padding: 10px;
+  background: rgba(183, 65, 14, 0.1);
+  padding: 15px;
   text-align: center;
-  border: 1px dashed var(--spaceman-orange);
+  border: 2px solid var(--spaceman-action);
 }
 
 @keyframes blink {
@@ -165,36 +158,32 @@ body {
 }
 
 h2 {
-  font-size: 1.5rem;
-  margin-bottom: 25px;
-  padding-bottom: 10px;
-  border-bottom: 3px double currentColor;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 4px solid var(--spaceman-dark);
   display: block;
 }
 
-.spaceman-panel.purple h2 { color: var(--spaceman-purple); }
-.spaceman-panel.blue h2 { color: var(--spaceman-blue); }
-.spaceman-panel.orange h2 { color: var(--spaceman-orange); }
-
 .stat, .stardate-container {
-  border: 1px solid #333;
-  background: #151518;
+  border: 2px solid var(--spaceman-variation);
+  background: rgba(0, 0, 0, 0.05);
   padding: 20px;
   margin-bottom: 15px;
-  box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .value {
-  color: var(--spaceman-blue);
-  text-shadow: 0 0 10px var(--spaceman-blue);
+  color: var(--spaceman-action);
+  font-weight: 900;
+  font-size: 2.2rem;
 }
 
-.spaceman-panel.orange .value {
-  color: var(--spaceman-orange);
-  text-shadow: 0 0 10px var(--spaceman-orange);
+.label {
+  color: var(--spaceman-primary);
+  font-weight: bold;
 }
 
 nav ul {
@@ -203,33 +192,33 @@ nav ul {
 }
 
 nav li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 nav a {
   display: block;
-  padding: 15px;
-  border: 1px solid #333;
-  background: #1a1a1e;
-  color: #fff;
+  padding: 18px;
+  border: 2px solid var(--spaceman-dark);
+  background: var(--spaceman-variation);
+  color: var(--spaceman-dark);
   text-decoration: none;
-  transition: all 0.3s;
+  font-weight: bold;
+  transition: all 0.2s;
 }
 
 nav a:hover {
-  background: var(--spaceman-blue);
-  color: #000;
-  padding-left: 25px;
+  background: var(--spaceman-action);
+  color: var(--spaceman-surface);
+  transform: translateX(10px);
 }
 
 @media (max-width: 1024px) {
   .spaceman-interface {
     padding: 10px;
-    gap: 5px;
+    gap: 8px;
   }
   .side-launcher {
-    width: 55px;
-    padding: 0 5px;
+    width: 60px;
   }
   .nav-btn {
     width: 40px;

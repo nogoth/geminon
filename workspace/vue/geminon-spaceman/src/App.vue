@@ -35,22 +35,22 @@ onMounted(() => {
     <!-- Left Sidebar: Primary Controls -->
     <aside class="side-launcher left">
       <button 
-        class="nav-btn purple" 
+        class="nav-btn action" 
         :class="{ active: activePanel === 'metrics' }"
         @click="togglePanel('metrics')"
-        title="LOC METRICS"
+        title="METRICS"
       ></button>
       <button 
-        class="nav-btn blue" 
+        class="nav-btn variation" 
         :class="{ active: activePanel === 'tech' }"
         @click="togglePanel('tech')"
         title="TECH HUB"
       ></button>
       <button 
-        class="nav-btn orange" 
+        class="nav-btn primary" 
         :class="{ active: activePanel === 'temporal' }"
         @click="togglePanel('temporal')"
-        title="TEMPORAL DATA"
+        title="TEMPORAL"
       ></button>
     </aside>
 
@@ -58,11 +58,11 @@ onMounted(() => {
     <main class="console-stage">
       <Transition name="panel-slide">
         <!-- Panel 1: LOC Metrics -->
-        <div v-if="activePanel === 'metrics'" class="spaceman-panel purple">
-          <div class="spaceman-elbow purple"></div>
+        <div v-if="activePanel === 'metrics'" class="spaceman-panel action">
+          <div class="spaceman-elbow action"></div>
           <div class="spaceman-content">
-            <h2>LOC Metrics</h2>
-            <div v-if="isScanning" class="scanning-text">SCANNING SECTOR...</div>
+            <h2>CODE METRICS</h2>
+            <div v-if="isScanning" class="scanning-text">INITIALIZING SURVEY...</div>
             <div v-else class="loc-data">
               <div class="stat">
                 <span class="label">TOTAL LOC:</span>
@@ -83,14 +83,14 @@ onMounted(() => {
 
       <Transition name="panel-slide">
         <!-- Panel 2: Tech Hub -->
-        <div v-if="activePanel === 'tech'" class="spaceman-panel blue">
-          <div class="spaceman-elbow blue"></div>
+        <div v-if="activePanel === 'tech'" class="spaceman-panel variation">
+          <div class="spaceman-elbow variation"></div>
           <div class="spaceman-content">
-            <h2>Tech Hub</h2>
+            <h2>LOGISTICS HUB</h2>
             <nav>
               <ul>
                 <li v-for="tech in techStack" :key="tech.name">
-                  <a :href="tech.url" target="_blank">> {{ tech.name }}</a>
+                  <a :href="tech.url" target="_blank">{{ tech.name }}</a>
                 </li>
               </ul>
             </nav>
@@ -100,10 +100,10 @@ onMounted(() => {
 
       <Transition name="panel-slide">
         <!-- Panel 3: Temporal Data -->
-        <div v-if="activePanel === 'temporal'" class="spaceman-panel orange">
-          <div class="spaceman-elbow orange"></div>
+        <div v-if="activePanel === 'temporal'" class="spaceman-panel primary">
+          <div class="spaceman-elbow primary"></div>
           <div class="spaceman-content">
-            <h2>Temporal Data</h2>
+            <h2>CHRONO DATA</h2>
             <div class="stardate-container">
               <div class="label">STARDATE</div>
               <div class="value">{{ stardate.toFixed(3) }}</div>
@@ -113,11 +113,11 @@ onMounted(() => {
       </Transition>
     </main>
 
-    <!-- Right Sidebar: Metallic Utility Controls -->
+    <!-- Right Sidebar: Utility Controls -->
     <aside class="side-launcher right">
-      <button class="nav-btn copper" title="UTILITY ALPHA"></button>
-      <button class="nav-btn gold" title="COMMAND BETA"></button>
-      <button class="nav-btn silver" title="SYSTEM GAMMA"></button>
+      <button class="nav-btn action" title="UTILITY ALPHA"></button>
+      <button class="nav-btn variation" title="COMMAND BETA"></button>
+      <button class="nav-btn primary" title="SYSTEM GAMMA"></button>
     </aside>
   </div>
 </template>
@@ -125,13 +125,11 @@ onMounted(() => {
 <style scoped>
 .label {
   display: block;
-  font-size: 0.8rem;
-  color: #888;
+  font-size: 0.9rem;
   margin-bottom: 5px;
 }
 .value {
-  font-size: 2rem;
-  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 /* Panel Slide Transitions */
@@ -142,18 +140,18 @@ onMounted(() => {
 
 .panel-slide-enter-from {
   opacity: 0;
-  transform: translateX(30px);
+  transform: scale(0.95) translateY(20px);
 }
 
 .panel-slide-leave-to {
   opacity: 0;
-  transform: translateX(-30px);
+  transform: scale(1.05) translateY(-20px);
   position: absolute;
 }
 
 @media (max-width: 768px) {
   .value {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 </style>
