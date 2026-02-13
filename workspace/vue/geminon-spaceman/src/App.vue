@@ -32,8 +32,8 @@ onMounted(() => {
 
 <template>
   <div class="spaceman-interface">
-    <!-- Sidebar Launcher -->
-    <aside class="side-launcher">
+    <!-- Left Sidebar: Primary Controls -->
+    <aside class="side-launcher left">
       <button 
         class="nav-btn purple" 
         :class="{ active: activePanel === 'metrics' }"
@@ -112,6 +112,13 @@ onMounted(() => {
         </div>
       </Transition>
     </main>
+
+    <!-- Right Sidebar: Metallic Utility Controls -->
+    <aside class="side-launcher right">
+      <button class="nav-btn copper" title="UTILITY ALPHA"></button>
+      <button class="nav-btn gold" title="COMMAND BETA"></button>
+      <button class="nav-btn silver" title="SYSTEM GAMMA"></button>
+    </aside>
   </div>
 </template>
 
