@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install and Build
-        working-directory: workspace/vue/geminon-lcars
+        working-directory: workspace/vue/geminon-spaceman
         run: |
           npm install
           npm run build
@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # This must point exactly to where 'npm run build' puts the files
-          path: 'workspace/vue/geminon-lcars/dist'
+          path: 'workspace/vue/geminon-spaceman/dist'
 
       - name: Deploy to GitHub Pages
         id: deployment

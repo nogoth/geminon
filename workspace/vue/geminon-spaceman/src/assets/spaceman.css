@@ -1,0 +1,141 @@
+:root {
+  --spaceman-purple: #cc99cc;
+  --spaceman-blue: #99ccff;
+  --spaceman-orange: #ff9900;
+  --spaceman-bg: #0b0b0d;
+  --spaceman-gap: 30px;
+}
+
+body {
+  background-color: var(--spaceman-bg);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 40px;
+  overflow-x: hidden;
+}
+
+.spaceman-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--spaceman-gap);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .spaceman-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+.spaceman-panel {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #333;
+  background: rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+/* Retro Mechanical Elbows */
+.spaceman-elbow {
+  height: 80px;
+  width: 100%;
+  border-radius: 40px 0 0 0;
+  margin-bottom: 0;
+  position: relative;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+}
+
+.spaceman-elbow::after {
+  content: "•";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: rgba(255,255,255,0.5);
+  font-size: 20px;
+}
+
+.spaceman-elbow.purple { background-color: var(--spaceman-purple); border-bottom: 5px solid #aa77aa; }
+.spaceman-elbow.blue { background-color: var(--spaceman-blue); border-bottom: 5px solid #77aaff; }
+.spaceman-elbow.orange { background-color: var(--spaceman-orange); border-bottom: 5px solid #cc7700; }
+
+.spaceman-content {
+  padding: 30px;
+  flex-grow: 1;
+  border-top: 1px solid #444;
+}
+
+.scanning-text {
+  animation: blink 1s steps(2, start) infinite;
+  color: var(--spaceman-orange);
+  font-weight: bold;
+  background: rgba(255, 153, 0, 0.1);
+  padding: 5px;
+  text-align: center;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 3px double currentColor;
+  display: inline-block;
+}
+
+.spaceman-panel.purple h2 { color: var(--spaceman-purple); }
+.spaceman-panel.blue h2 { color: var(--spaceman-blue); }
+.spaceman-panel.orange h2 { color: var(--spaceman-orange); }
+
+.stat, .stardate-container {
+  border: 1px solid #333;
+  background: #151518;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.value {
+  color: var(--spaceman-blue);
+  text-shadow: 0 0 10px var(--spaceman-blue);
+}
+
+.spaceman-panel.orange .value {
+  color: var(--spaceman-orange);
+  text-shadow: 0 0 10px var(--spaceman-orange);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  margin-bottom: 15px;
+}
+
+nav a {
+  display: block;
+  padding: 10px;
+  border: 1px solid #333;
+  background: #1a1a1e;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+nav a:hover {
+  background: var(--spaceman-blue);
+  color: #000;
+  transform: translateX(10px);
+}
