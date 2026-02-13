@@ -1,0 +1,58 @@
+:root {
+  --lcars-purple: #cc99cc;
+  --lcars-blue: #99ccff;
+  --lcars-orange: #ff9900;
+  --lcars-bg: #000000;
+}
+
+body {
+  background-color: var(--lcars-bg);
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px;
+}
+
+.lcars-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  height: 90vh;
+}
+
+.lcars-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LCARS Elbows */
+.lcars-elbow {
+  height: 40px;
+  width: 100%;
+  border-radius: 20px 0 0 0;
+  margin-bottom: 10px;
+}
+
+.lcars-elbow.purple { background-color: var(--lcars-purple); }
+.lcars-elbow.blue { background-color: var(--lcars-blue); }
+.lcars-elbow.orange { background-color: var(--lcars-orange); }
+
+.lcars-content {
+  border-left: 20px solid transparent;
+  padding-left: 10px;
+}
+
+.lcars-panel.purple .lcars-content { border-left-color: var(--lcars-purple); }
+.lcars-panel.blue .lcars-content { border-left-color: var(--lcars-blue); }
+.lcars-panel.orange .lcars-content { border-left-color: var(--lcars-orange); }
+
+.scanning-text {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
