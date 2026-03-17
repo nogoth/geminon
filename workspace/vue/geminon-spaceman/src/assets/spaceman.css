@@ -225,3 +225,81 @@ nav a:hover {
     height: 40px;
   }
 }
+
+/* Mobile: sidebars become fixed top/bottom bars, main content scrolls */
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+
+  .spaceman-interface {
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* Left sidebar → fixed top bar */
+  .side-launcher.left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid var(--spaceman-variation);
+    padding: 8px 15px;
+  }
+
+  /* Right sidebar → fixed bottom bar */
+  .side-launcher.right {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    border: none;
+    border-top: 2px solid var(--spaceman-variation);
+    padding: 8px 15px;
+  }
+
+  .side-launcher .nav-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Main content scrolls between the fixed bars */
+  .console-stage {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 20px 10px;
+    min-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+
+  .spaceman-panel {
+    position: relative;
+    box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .spaceman-content {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}
