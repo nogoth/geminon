@@ -30,7 +30,7 @@ We've expanded into building other software in the `workspace/` directory. for e
 
 ### Vue
 *   **Ticket Viewer** (`workspace/vue/ticket-viewer`): A clean Vue.js frontend for viewing and managing tickets. (WIP)
-*   **Geminon LCARS** (`workspace/vue/geminon-lcars`): A futuristic dashboard styled after the LCARS interface (from Star Trek), demonstrating our UI capabilities.
+*   **Geminon Spaceman** (`workspace/vue/geminon-spaceman`): A futuristic dashboard styled after a SPACE interface, demonstrating our UI capabilities.
 
 ## Extensions
 

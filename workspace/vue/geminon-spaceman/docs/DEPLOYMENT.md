@@ -1,4 +1,4 @@
-# Deployment Guide: Geminon LCARS Dashboard
+# Deployment Guide: Geminon Spaceman Dashboard
 
 This project is designed to be hosted on **GitHub Pages** using **GitHub Actions**.
 
