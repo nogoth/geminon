@@ -18,7 +18,7 @@ This skill helps you preserve knowledge by saving research findings into a struc
 4. **Name and Save**: 
    - Directory: `memories/` (create if it doesn't exist).
    - Filename: `YYYY-MM-DD-kebab-case-topic.md` (e.g., `2026-02-09-docker-compose-react.md`).
-5. **Write File**: Use `write_file` to save the memory.
+5. **Write File**: Save the memory using the Write tool.
 
 ## Metadata Guidelines
 

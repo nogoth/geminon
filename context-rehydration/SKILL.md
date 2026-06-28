@@ -16,11 +16,10 @@ This skill allows you to "remember" past learnings by loading structured memory 
 
 ## Automation & Validation
 
-- **Helper Script**: `/opt/rehydrate.sh` provides a fast-track for searching and reading memories.
-- **Verification**: Use `/opt/tests/test_context_rehydration.sh` to ensure the memory library remains healthy and follows the expected template.
+- **Helper Script**: `./rehydrate.sh` provides a fast-track for searching and reading memories.
 
 ## Search Strategy
 
-- Use `list_directory` on the `memories/` folder.
+- List the `memories/` folder with the Bash tool or by reading the directory.
 - If the directory doesn't exist, inform the user that no memories have been recorded yet.
 - Match filenames against keywords from the current task.

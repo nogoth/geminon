@@ -2,7 +2,7 @@
 # Rehydrate helper script
 # Usage: ./rehydrate.sh <keyword>
 
-MEMORIES_DIR="/opt/memories"
+MEMORIES_DIR="$(dirname "$0")/memories"
 
 if [ -z "$1" ]; then
     echo "Usage: ./rehydrate.sh <keyword>"
