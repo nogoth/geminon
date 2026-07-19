@@ -12,9 +12,6 @@ This skill helps tuck away findings from your research. Think of it as keeping g
 ### Context Rehydration
 When you need to recall past lessons, this skill helps bring those research memories back into play. It's about remembering what we've already figured out, so you don't have to start fresh every time. Finds these memories in the `memories/` directory.
 
-### LinkedIn Writer
-For when you've done something worth sharing. This skill takes your technical summaries and whips them into shape for LinkedIn, making sure they sound professional. It's got different "voices" too, so it can be as terse or verbose as you want. Posts are saved in `sessions/summaries/linkedin/`.
-
 ### Session Summarizer
 At the end of a long stretch of work, this skill helps sum things up. It lays out what got done, what tripped us up, and anything new that came along. Good for looking back and seeing where we stand. Summaries are kept in the `sessions/summaries/` directory.
 
@@ -44,7 +41,7 @@ Gemini-cli validated extensions, these are for making my life more fun, or yours
 This is where all the good research findings get stored. Each file is a structured note on something learned, ready to be pulled up when needed.
 
 ### `sessions/summaries/`
-After a work session, a summary of what happened here gets filed away. It's a record of the day's progress, challenges, and what's next. The `linkedin/` subdirectory holds the professional posts drafted from these summaries.
+After a work session, a summary of what happened here gets filed away. It's a record of the day's progress, challenges, and what's next.
 
 ### `workspace/`
 The home for our active coding projects. Whether it's Go, Python, or Vue, this is where the code lives.

@@ -1,10 +1,12 @@
-# Topic: {{topic}}
+---
+topic: {{topic}}
+date: {{date}}
+tags: [{{tags}}]
+status: {{status}}
+related: [{{related}}]
+---
 
-## Metadata
-- **Date**: {{date}}
-- **Tags**: {{tags}}
-- **Status**: {{status}}
-- **Related Memories**: {{related}}
+# Topic: {{topic}}
 
 ## Context/Problem
 {{context}}

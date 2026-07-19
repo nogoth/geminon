@@ -1,10 +1,12 @@
-# Topic: Go Ticket Tracker Server and Python CLI Client
+---
+topic: Go Ticket Tracker Server and Python CLI Client
+date: 2026-02-11
+tags: [go, python, sqlite, openapi, uv, testing, integration]
+status: Completed
+related: []
+---
 
-## Metadata
-- **Date**: 2026-02-11
-- **Tags**: go, python, sqlite, openapi, uv, testing, integration
-- **Status**: Completed
-- **Related Memories**: 2026-02-11-gemini-cli-mcporter-integration.md
+# Topic: Go Ticket Tracker Server and Python CLI Client
 
 ## Context/Problem
 The goal was to create a robust, tested, and documented ticket tracking system consisting of a Go backend and a Python CLI frontend. The Go server needed to use SQLite and expose an API based on an OpenAPI 3.0 specification. The Python client needed to be built using `uv` for dependency management, with auto-generated Pydantic models from the server's OpenAPI spec.

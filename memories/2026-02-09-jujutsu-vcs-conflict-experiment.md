@@ -1,10 +1,12 @@
-# Topic: Jujutsu (jj) VCS Conflict Handling
+---
+topic: Jujutsu (jj) VCS Conflict Handling
+date: 2026-02-09
+tags: [vcs, jujutsu, git, conflicts, developer-tools]
+status: Completed
+related: [2026-02-09-jujutsu-vcs-trial.md]
+---
 
-## Metadata
-- **Date**: 2026-02-09
-- **Tags**: vcs, jujutsu, git, conflicts, developer-tools
-- **Status**: Completed
-- **Related Memories**: 2026-02-09-jujutsu-vcs-trial.md
+# Topic: Jujutsu (jj) VCS Conflict Handling
 
 ## Context/Problem
 In traditional VCS like Git, conflicts are a "stop-the-world" event. You cannot commit while in a conflicted state, and the repository is locked into a merge/rebase mode. This disrupts the developer's flow and makes it difficult to share or postpone conflict resolution.

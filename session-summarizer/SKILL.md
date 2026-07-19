@@ -25,6 +25,37 @@ To generate a comprehensive session summary, follow these steps:
     *   **Save to File**: Create a directory `sessions/summaries/` if it doesn't exist. Save the summary to `sessions/summaries/summary-<NUMBER>.md`, where `<NUMBER>` is the next available integer (starting at 1).
     *   **Provide Output**: Display the full summary in the current session as well.
 
+## Automatic Summaries via SessionEnd Hook
+
+Claude Code can trigger this skill automatically when a session ends, using a `SessionEnd` hook that runs [scripts/session-end-summary.sh](scripts/session-end-summary.sh). The script reads the hook's stdin JSON (`transcript_path`, `cwd`, `reason`), pipes the session transcript to a headless `claude -p` call with the summarizer instructions, and writes the result to `sessions/summaries/summary-<N>.md` itself — the headless call needs no write permissions.
+
+To enable it, add this to `.claude/settings.json` (team-shared) or `.claude/settings.local.json` (personal):
+
+```json
+{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "session-summarizer/scripts/session-end-summary.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Caveats:
+
+*   Each session end costs one headless model call.
+*   The transcript file is written asynchronously and may slightly lag the live session.
+*   `SessionEnd` hooks cannot block and their output is never shown — check `sessions/summaries/` for the result. The script exits silently on any failure.
+*   The hook does not fire for `claude -p` (non-interactive) runs, so the nested headless call cannot recurse.
+*   Sessions ending with reason `resume` are skipped (the session isn't over).
+
 ## Guidelines
 
 *   **Be Objective**: Report both successes and failures accurately.

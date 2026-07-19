@@ -1,6 +1,6 @@
 ---
 name: research-memory
-description: Saves research findings into a structured markdown format in the 'memories' directory to preserve learning for future sessions. Use this after completing research or solving a complex problem to ensure the knowledge is reusable.
+description: Saves research findings into a structured markdown format in the 'memories' directory to preserve learning for future sessions. Use when the user says "remember this", "save this for later", "write this down", or "take a note of this", and after completing research or solving a complex problem worth reusing.
 ---
 
 # Research Memory Skill
@@ -10,7 +10,7 @@ This skill helps you preserve knowledge by saving research findings into a struc
 ## Workflow
 
 1. **Synthesize Findings**: Summarize the topic, findings, and actionable insights. Aim for an **"Agent-Ready"** format that allows a future agent to pick up the tool/concept instantly.
-2. **Determine Metadata**: Identify relevant tags and any related memories.
+2. **Determine Metadata**: Identify relevant tags and any related memories. Metadata lives in YAML frontmatter at the top of the file so retrieval tooling (`rehydrate.sh`) can search it.
 3. **Format Memory**: Use the structure provided in `assets/memory-template.md`.
    - **Mental Model**: Explain *how* to think about the tool, not just *what* it is.
    - **Reference Table**: Provide a quick command/API lookup (especially translations from common tools like Git).
@@ -22,7 +22,10 @@ This skill helps you preserve knowledge by saving research findings into a struc
 
 ## Metadata Guidelines
 
-- **Topic**: Clear, concise name of the subject.
-- **Date**: YYYY-MM-DD.
-- **Tags**: Comma-separated list of keywords.
-- **Actions**: Concrete steps that can be taken based on this research.
+All metadata goes in the YAML frontmatter block:
+
+- **topic**: Clear, concise name of the subject.
+- **date**: YYYY-MM-DD.
+- **tags**: List of lowercase keywords, e.g. `[vcs, jujutsu, conflicts]`.
+- **status**: `Completed`, `In-Progress`, or `Stale`.
+- **related**: List of related memory filenames that exist in `memories/`; `[]` if none.

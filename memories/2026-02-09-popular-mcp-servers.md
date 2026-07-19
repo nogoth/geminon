@@ -1,10 +1,12 @@
-# Topic: Popular MCP Servers (Python, Rust, Go)
+---
+topic: Popular MCP Servers (Python, Rust, Go)
+date: 2026-02-09
+tags: [MCP, Python, Rust, Go, AI, Model Context Protocol]
+status: Completed
+related: [2026-02-09-mcporter-research.md]
+---
 
-## Metadata
-- **Date**: 2026-02-09
-- **Tags**: MCP, Python, Rust, Go, AI, Model Context Protocol
-- **Status**: Completed
-- **Related Memories**: 2026-02-09-mcporter-research.md
+# Topic: Popular MCP Servers (Python, Rust, Go)
 
 ## Context/Problem
 Identification of popular Model Context Protocol (MCP) servers and SDKs across Python, Rust, and Go to understand the ecosystem and available tools for AI integration.

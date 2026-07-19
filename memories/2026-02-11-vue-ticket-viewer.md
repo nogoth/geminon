@@ -1,10 +1,12 @@
-# Topic: Vue Ticket Viewer Frontend
+---
+topic: Vue Ticket Viewer Frontend
+date: 2026-02-11
+tags: [vue, vite, css-grid, cors, go, frontend]
+status: Completed
+related: [2026-02-11-go-python-ticket-tracker.md]
+---
 
-## Metadata
-- **Date**: 2026-02-11
-- **Tags**: vue, vite, css-grid, cors, go, frontend
-- **Status**: Completed
-- **Related Memories**: 2026-02-11-go-python-ticket-tracker.md
+# Topic: Vue Ticket Viewer Frontend
 
 ## Context/Problem
 Added a web-based frontend to the existing Go Ticket Tracker system. The requirements included a 3-column grid layout and a Floating Action Button (FAB) that triggers a creation overlay with a fade-out effect on the main grid.

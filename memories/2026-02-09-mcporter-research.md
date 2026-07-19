@@ -1,10 +1,12 @@
-# Topic: MCPorter (Model Context Protocol Toolkit)
+---
+topic: MCPorter (Model Context Protocol Toolkit)
+date: 2026-02-09
+tags: [MCP, Claude, Gemini, TypeScript, AI Tools, Automation]
+status: Stale
+related: []
+---
 
-## Metadata
-- **Date**: 2026-02-09
-- **Tags**: MCP, Claude, Gemini, TypeScript, AI Tools, Automation
-- **Status**: Completed
-- **Related Memories**: None
+# Topic: MCPorter (Model Context Protocol Toolkit)
 
 ## Context/Problem
 Investigation into the tool "mcporter" and its role in the ecosystem of AI models like Claude and Gemini. The user wanted to understand how it is used and how it relates to these models.

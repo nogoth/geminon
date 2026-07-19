@@ -1,6 +1,6 @@
 ---
 name: context-rehydration
-description: Searches and loads previously saved research memories from the 'memories' directory into the current context. Use this when the user asks about past research or when a relevant memory might help solve the current task.
+description: Searches previously saved research memories in the 'memories' directory by keyword (via rehydrate.sh) and loads them into the current context. Use when the user says "recall", "remember", "do you remember", "have we done/researched this before", or refers to a previous session or past research.
 ---
 
 # Context Rehydration Skill
@@ -9,9 +9,10 @@ This skill allows you to "remember" past learnings by loading structured memory 
 
 ## Workflow
 
-1. **Search and Load**: Use the `rehydrate.sh` helper script to find and display memories by keyword.
+1. **Search and Load**: Use the `rehydrate.sh` helper script (at the repo root) to find and display memories by keyword. It matches against filenames and file contents, including the YAML frontmatter tags.
    - Example: `./rehydrate.sh jujutsu`
-2. **Synthesize**: Read the "Metadata" and "Actionable Insights" from the output to inform the current task.
+   - On multiple matches it lists the candidate files with a matching-line preview; re-run with a narrower keyword or `cat` the specific file.
+2. **Synthesize**: Read the frontmatter metadata and the "Actionable Insights/Next Steps" section from the output to inform the current task.
 3. **Apply Learning**: Use the rehydrated context to proceed with the user's request.
 
 ## Automation & Validation
@@ -20,6 +21,5 @@ This skill allows you to "remember" past learnings by loading structured memory 
 
 ## Search Strategy
 
-- List the `memories/` folder with the Bash tool or by reading the directory.
-- If the directory doesn't exist, inform the user that no memories have been recorded yet.
-- Match filenames against keywords from the current task.
+- Prefer `rehydrate.sh`; if it is unavailable, fall back to `grep -ril <keyword> memories/` — content search, not just filenames, since tags live in frontmatter.
+- If the `memories/` directory doesn't exist, inform the user that no memories have been recorded yet.

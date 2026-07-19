@@ -1,7 +1,0 @@
-Jujutsu (jj) handles conflicts differently. No more "merge conflict" state that blocks your workflow.
-
-- Initialized a co-located repo: jj git init --colocated.
-- Forced a conflict via rebase.
-- jj keeps the commit. The conflict is just data in the tree.
-
-Resolution via jj squash. Efficient. Functional query language for revsets is powerful but watch your shell quoting.

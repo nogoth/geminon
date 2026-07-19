@@ -1,10 +1,12 @@
-# Topic: Jujutsu (jj) Version Control
+---
+topic: Jujutsu (jj) Version Control
+date: 2026-02-09
+tags: [vcs, jujutsu, git, workflow, dev-tools]
+status: Completed
+related: []
+---
 
-## Metadata
-- **Date**: 2026-02-09
-- **Tags**: vcs, jujutsu, git, workflow, dev-tools
-- **Status**: Completed
-- **Related Memories**: None
+# Topic: Jujutsu (jj) Version Control
 
 ## Context/Problem
 Exploring modern alternatives to Git that offer a simplified mental model, better history management, and first-class conflict handling while maintaining compatibility with existing Git ecosystems.

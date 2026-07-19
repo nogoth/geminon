@@ -1,10 +1,12 @@
-# Topic: Jujutsu (jj) Multi-way Conflict Handling and External Merge Tools
+---
+topic: Jujutsu (jj) Multi-way Conflict Handling and External Merge Tools
+date: 2026-02-09
+tags: [vcs, jujutsu, conflicts, merge-tools, dev-tools]
+status: Completed
+related: [2026-02-09-jujutsu-vcs-conflict-experiment.md, 2026-02-09-jujutsu-vcs-trial.md]
+---
 
-## Metadata
-- **Date**: 2026-02-09
-- **Tags**: vcs, jujutsu, conflicts, merge-tools, dev-tools
-- **Status**: Completed
-- **Related Memories**: 2026-02-09-jujutsu-vcs-conflict-experiment.md, 2026-02-09-jujutsu-vcs-trial.md
+# Topic: Jujutsu (jj) Multi-way Conflict Handling and External Merge Tools
 
 ## Context/Problem
 Investigating how Jujutsu (jj) handles conflicts involving more than two branches (multi-way) and how it integrates with external merge tools for resolution.
